@@ -1,21 +1,38 @@
 import { useEffect, useState } from "react";
 import ExtentionCard from "../components/ExtentionCard";
 
-
+import '../components/ExtentionsShowcase.css';
 
 
 const ExtentionsShowcase = ({extentions})=>{
     
-    const [isChecked, setIsChecked] = useState("all")
+    const [currentFilter, setcurrentFilter] = useState("all")
+    const [filteredExtentions, setFilteredExtentions] = useState(extentions)
+
 
     useEffect(()=>{
 
+        switch (currentFilter){
+            case "all":  
+                setFilteredExtentions(extentions) // do nothing
+                break;
 
+            case "active": 
+                setFilteredExtentions( null )
+                setFilteredExtentions( extentions.filter( (item)=> item.isActive===true ) )
+                break;
 
-    }, [isChecked])
+            case "inactive": 
+                setFilteredExtentions( null )
+                setFilteredExtentions( extentions.filter( (item)=> item.isActive===false ) )
+                break;
+            default: console.log(`there's been an error`)
+        }
+
+    }, [currentFilter, extentions])
     
     const handleRadio = (e)=>{
-        setIsChecked(e.target.value)
+        setcurrentFilter(e.target.value)
     }
 
     return(
@@ -24,17 +41,22 @@ const ExtentionsShowcase = ({extentions})=>{
                 <h1>Extentions</h1>
 
                 <div>
-                    <input type="radio" name="selection" id="all" value="all" onChange={ (e)=>handleRadio(e) } />
-                    <input type="radio" name="selection" id="Active" value="Active" onChange={ (e)=>handleRadio(e) } />
-                    <input type="radio" name="selection" id="Inactive" value="Inactive" onChange={ (e)=>handleRadio(e) } />
+                    <label htmlFor="all">All</label>
+                    <input type="radio" name="selection" id="all" value="all" onChange={ (e)=>handleRadio(e) } defaultChecked/>
+                    
+                    <label htmlFor="active">Active</label>
+                    <input type="radio" name="selection" id="active" value="active" onChange={ (e)=>handleRadio(e) } />
+
+                    <label htmlFor="inactive">Inactive</label>
+                    <input type="radio" name="selection" id="inactive" value="inactive" onChange={ (e)=>handleRadio(e) } />
                 </div>
                 
             </header>
-            <ul>
+            <ul className="ExtentionsShowcase">
 
-            { extentions.length>0 && 
+            { filteredExtentions.length>0 && 
 
-                extentions.map( (extention,index) => {
+                filteredExtentions.map( (extention,index) => {
 
                 return <ExtentionCard 
                             key={`extention-${index}`}

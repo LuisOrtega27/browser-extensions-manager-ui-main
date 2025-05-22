@@ -1,11 +1,12 @@
 import { useState } from "react";
+import '../components/ExtentionCard.css'
 
 const ExtentionCard = ({logo, name, description, isActive})=>{
 
     const [checked, isChecked] = useState(isActive)
 
     return(
-        <li>
+        <li className="ExtentionCard">
             
             <div>
                 <picture> <img src={logo} alt={logo}/> </picture>
