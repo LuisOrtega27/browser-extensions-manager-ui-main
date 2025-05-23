@@ -3,3 +3,43 @@
     padding: 20px;
     border-radius: 25px;
 }
+
+.ExtentionCardActions{
+    display: flex;
+    
+    justify-content: space-between;
+}
+
+.ExtentionCard input[type="checkbox"]{
+    display: none;
+}
+.ExtentionCard label{
+    display: inline-block;
+    position: relative;
+    width: 30px;
+    height: 17px;
+    background-color: rgb(59, 59, 71);
+    border-radius: 50px;
+    transition: background 0.3s ease-in-out;
+}
+input[type="checkbox"]:checked + label{
+    background-color: rgb(255, 88, 54);
+}
+
+.ExtentionCard label::before{
+    position: absolute;
+    left: 1px;
+    top: 1px;
+    content:"";
+    display: inline-block;
+    height: 14px;
+    aspect-ratio: 1/1;
+    background-color: white;
+    border-radius: 50%;
+    transform: translateX(0%);
+    transition: transform 0.3s ease-in-out;
+}
+
+input[type="checkbox"]:checked + label::before{
+    transform: translateX(100%);
+}

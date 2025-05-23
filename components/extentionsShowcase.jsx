@@ -4,7 +4,7 @@ import ExtentionCard from "../components/ExtentionCard";
 import '../components/ExtentionsShowcase.css';
 
 
-const ExtentionsShowcase = ({extentions})=>{
+const ExtentionsShowcase = ({extentions, setExtentions})=>{
     
     const [currentFilter, setcurrentFilter] = useState("all")
     const [filteredExtentions, setFilteredExtentions] = useState(extentions)
@@ -18,12 +18,10 @@ const ExtentionsShowcase = ({extentions})=>{
                 break;
 
             case "active": 
-                setFilteredExtentions( null )
                 setFilteredExtentions( extentions.filter( (item)=> item.isActive===true ) )
                 break;
 
             case "inactive": 
-                setFilteredExtentions( null )
                 setFilteredExtentions( extentions.filter( (item)=> item.isActive===false ) )
                 break;
             default: console.log(`there's been an error`)
@@ -33,6 +31,10 @@ const ExtentionsShowcase = ({extentions})=>{
     
     const handleRadio = (e)=>{
         setcurrentFilter(e.target.value)
+    }
+
+    const handlecheckbox= (e)=>{ // have to think how to do this... delete/add element throu checkbox
+        console.log(e.target)
     }
 
     return(
@@ -50,8 +52,8 @@ const ExtentionsShowcase = ({extentions})=>{
                     <label htmlFor="inactive">Inactive</label>
                     <input type="radio" name="selection" id="inactive" value="inactive" onChange={ (e)=>handleRadio(e) } />
                 </div>
-                
             </header>
+
             <ul className="ExtentionsShowcase">
 
             { filteredExtentions.length>0 && 
@@ -63,7 +65,8 @@ const ExtentionsShowcase = ({extentions})=>{
                             logo={extention.logo} 
                             name={extention.name} 
                             description={extention.description} 
-                            isActive={extention.isActive} />
+                            isActive={extention.isActive} 
+                            handlecheckbox={handlecheckbox}/>
                 })
 
             }
