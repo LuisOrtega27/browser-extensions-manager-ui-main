@@ -70,6 +70,18 @@ function App() {
     
   }
 
+  const handleRemove = (name)=>{
+
+    let targetIndex = extentions.findIndex( obj => obj.name == name)
+
+    let newArr = JSON.parse(JSON.stringify(extentions))
+    
+    newArr.splice(targetIndex, 1)
+
+    setExtentions(newArr)
+
+  }
+
   return (
     <>
       <main>
@@ -114,7 +126,7 @@ function App() {
                       
                       <div className="ExtentionCardActions">
 
-                          <button>Remove</button>
+                          <button onClick={ ()=> handleRemove(extention.name) }>Remove</button>
 
                           <input type="checkbox" 
                                   checked={extention.isActive} 
