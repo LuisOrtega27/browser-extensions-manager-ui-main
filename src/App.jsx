@@ -3,45 +3,42 @@ import ExtentionsShowcase from "../components/extentionsShowcase";
 const URL = `./data.json`
 
 
-// const FetchData = async(URL) =>{
+const FetchData = async(URL, setExtentions) =>{
   
-//   try {
+  try {
    
-//     const response = await fetch(URL);
-//     if (!response.ok) {
-//       throw new Error(`Response status: ${response.status}`);
-//     }
+    const response = await fetch(URL);
 
-//     const json = await response.json();
-//     // console.log(json);
+    if (!response.ok) {
 
-//     return json;
+      throw new Error(`Response status: ${response.status}`);
 
-//   } catch (error) {
-//     console.error(error.message);
-//   }
+    }
 
-// }
+    const json = await response.json();
+
+    setExtentions(json)
+
+  } catch (error) {
+
+    console.error(error.message);
+
+  }
+
+}
 
 
 function App() {
   const [extentions, setExtentions] = useState([])
 
-  useEffect( () => {
-
-    fetch(URL)
-    .then( response => response.json() )
-    .then( data => setExtentions(data) )
-
-    
-  }, []);
+  useEffect( () => { FetchData( URL, setExtentions ), [] });
 
   return (
     <>
       <main>
 
         <header>
-          <img src="./assets/images/favicon-32x32.png" alt="./assets/images/favicon-32x32.png" />
+          <img src="./assets/images/favicon-32x32.png" alt="./assets/images/logo.svg" />
           <h2>Extentions</h2>
           <button><img src="./assets/images/icon-sun.svg" alt="./assets/images/icon-sun.svg" /></button>
         </header>

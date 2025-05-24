@@ -4,11 +4,10 @@ import ExtentionCard from "../components/ExtentionCard";
 import '../components/ExtentionsShowcase.css';
 
 
-const ExtentionsShowcase = ({extentions, setExtentions})=>{
+const ExtentionsShowcase = ( {extentions, setExtentions} )=>{
     
     const [currentFilter, setcurrentFilter] = useState("all")
     const [filteredExtentions, setFilteredExtentions] = useState(extentions)
-
 
     useEffect(()=>{
 
@@ -33,13 +32,16 @@ const ExtentionsShowcase = ({extentions, setExtentions})=>{
         setcurrentFilter(e.target.value)
     }
 
-    const handlecheckbox= (e)=>{ // have to think how to do this... delete/add element throu checkbox
-        console.log(e.target)
+    const handlecheckbox= (index)=>{ // have to think how to do this... delete/add element throu checkbox
+
+
     }
+
+
 
     return(
         <>
-            <header>
+            <header className="filterArea">
                 <h1>Extentions</h1>
 
                 <div>
@@ -62,6 +64,7 @@ const ExtentionsShowcase = ({extentions, setExtentions})=>{
 
                 return <ExtentionCard 
                             key={`extention-${index}`}
+                            index={index}
                             logo={extention.logo} 
                             name={extention.name} 
                             description={extention.description} 

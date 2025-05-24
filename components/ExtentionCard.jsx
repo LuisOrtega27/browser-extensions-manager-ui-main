@@ -1,9 +1,9 @@
 import { useState } from "react";
 import '../components/ExtentionCard.css'
 
-const ExtentionCard = ({logo, name, description, isActive, handlecheckbox})=>{
+const ExtentionCard = ({index, extention, logo, name, description, isActive, handlecheckbox})=>{
 
-    const [checked, isChecked] = useState(isActive)
+
 
     return(
         <li className="ExtentionCard">
@@ -24,10 +24,8 @@ const ExtentionCard = ({logo, name, description, isActive, handlecheckbox})=>{
                         checked={isActive} 
                         id={name}
                         name={name}
-                        onChange={ (e)=> {
-                            isChecked(!checked) 
-                            handlecheckbox(e)
-                } }/>
+                        onChange={ ()=> handlecheckbox(index) }
+                />
                 <label htmlFor={name}></label>
                 
             </div>
