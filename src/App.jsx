@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react"
 import '../components/ExtentionsShowcase.css';
 import '../components/ExtentionCard.css'
+import ExtentionCard from "../components/ExtentionCard";
 
 const URL = `./data.json`
-
 
 const FetchData = async(URL, setExtentions) =>{
   
@@ -28,7 +28,6 @@ const FetchData = async(URL, setExtentions) =>{
   }
 
 }
-
 
 function App() {
 
@@ -61,26 +60,6 @@ function App() {
       setcurrentFilter(e.target.value)
   }
   
-  const handlecheckbox = ( currentExtention )=>{
-    
-    setExtentions(
-      [...extentions, currentExtention.isActive= !currentExtention.isActive]
-    )
-    console.log(currentExtention)    
-    
-  }
-
-  const handleRemove = (name)=>{
-
-    let targetIndex = extentions.findIndex( obj => obj.name == name)
-
-    let newArr = JSON.parse(JSON.stringify(extentions))
-    
-    newArr.splice(targetIndex, 1)
-
-    setExtentions(newArr)
-
-  }
 
   return (
     <>
@@ -88,9 +67,10 @@ function App() {
 
         <header>
           
-          <img src="./assets/images/logo.svg" alt="./assets/images/logo.svg" />
-          
-          <button><img src="./assets/images/icon-sun.svg" alt="./assets/images/icon-sun.svg" /></button>
+          <div>
+            <img src="./assets/images/logo.svg" alt="./assets/images/logo.svg" />
+            <button><img src="./assets/images/icon-sun.svg" alt="./assets/images/icon-sun.svg" /></button>
+          </div>
 
           <h1>Extentions</h1>
 
@@ -109,37 +89,20 @@ function App() {
 
             <ul className="ExtentionsShowcase">
 
-            { filteredExtentions.length>0 && 
+            { filteredExtentions.length === 0 
+              ?
+              <p>There's no items in the list</p>
+              :
 
               filteredExtentions.map( (extention,index) => {
 
-                return (
-                  <li className="ExtentionCard" key={`extention-${index}`}>
-            
-                      <div>
-                          <picture> <img src={extention.logo} alt={extention.logo}/> </picture>
-                          <div> 
-                              <h4>{extention.name}</h4> 
-                              <p>{extention.description}</p>
-                          </div>
-                      </div>
-                      
-                      <div className="ExtentionCardActions">
-
-                          <button onClick={ ()=> handleRemove(extention.name) }>Remove</button>
-
-                          <input type="checkbox" 
-                                  checked={extention.isActive} 
-                                  id={extention.name}
-                                  name={extention.name}
-                                  onChange={ ()=> handlecheckbox(extention) }
-                          />
-
-                          <label htmlFor={extention.name}></label>
-                          
-                      </div>
-
-                  </li>
+                return ( 
+                  <ExtentionCard 
+                    extention={extention} 
+                    setExtentions={setExtentions} 
+                    extentions={extentions} 
+                    index={index} 
+                    key={index}/> 
                 )
 
               })

@@ -1,9 +1,35 @@
 import { useState } from "react";
 import '../components/ExtentionCard.css'
 
-const ExtentionCard = ({index, extention, logo, name, description, isActive, handlecheckbox})=>{
+const ExtentionCard = ( {extention, setExtentions, extentions} )=>{
 
+    const {logo, name, description, isActive} = extention
 
+    const handleCheckbox = ( currentExtention )=>{ // CHANGE CARD CHECKBOX
+
+        let newArr = JSON.parse(
+            JSON.stringify(
+                [...extentions, currentExtention.isActive= !currentExtention.isActive ]
+            )
+        )
+        newArr.pop()
+
+        setExtentions(newArr)
+    
+    }
+
+    const handleRemove = (name)=>{ // REMOVE CARD
+
+        let targetIndex = extentions.findIndex( obj => obj.name == name)
+
+        let newArr = JSON.parse(JSON.stringify(extentions))
+
+        
+        newArr.splice(targetIndex, 1)
+
+        setExtentions(newArr)
+
+    }
 
     return(
         <li className="ExtentionCard">
@@ -18,14 +44,15 @@ const ExtentionCard = ({index, extention, logo, name, description, isActive, han
             
             <div className="ExtentionCardActions">
 
-                <button>Remove</button>
+                <button onClick={ ()=> handleRemove(name) }>Remove</button>
 
                 <input type="checkbox" 
                         checked={isActive} 
                         id={name}
                         name={name}
-                        onChange={ ()=> handlecheckbox(index) }
+                        onChange={ ()=> handleCheckbox(extention) }
                 />
+
                 <label htmlFor={name}></label>
                 
             </div>
