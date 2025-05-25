@@ -1,29 +1,35 @@
-.ExtentionCard{
-    border: 1px solid #fff5;
-    padding: 20px;
-    border-radius: 25px;
+
+
+.filterRadio:checked + .filterButton{
+    background-color: hsl(3, 71%, 56%);
+    color: var(--color-Neutral900);
+}
+.filterRadio:checked + .filterButton:hover{
+    background-color: hsl(3, 86%, 64%);
 }
 
-.ExtentionCardActions{
-    display: flex;
-    
-    justify-content: space-between;
-}
-
-.ExtentionCard input[type="checkbox"]{
-    display: none;
-}
 .ExtentionCard label{
     display: inline-block;
     position: relative;
     width: 30px;
     height: 17px;
-    background-color: rgb(59, 59, 71);
+    background-color: var(--color-Neutral600);
     border-radius: 50px;
     transition: background 0.3s ease-in-out;
+    cursor: pointer;
+}
+.ExtentionCard label:hover{
+    background-color: var(--color-Neutral700);
+
+}
+input[type="checkbox"]{
+    display: none;
 }
 input[type="checkbox"]:checked + label{
-    background-color: rgb(255, 88, 54);
+    background-color: var(--color-Red500);
+}
+input[type="checkbox"]:checked + label:hover{
+    background-color: var(--color-Red700);
 }
 
 .ExtentionCard label::before{

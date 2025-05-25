@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react"
-import '../components/ExtentionsShowcase.css';
 import '../components/ExtentionCard.css'
 import ExtentionCard from "../components/ExtentionCard";
 
@@ -63,35 +62,74 @@ function App() {
 
   return (
     <>
-      <main>
+      <main className="
+            bg-linear-to-b from-darkTop to-darkbottom
+            min-h-full
+            text-Neutral0 
+            p-4 lg:p-20 
+            font-notoVariable 
+      ">
 
         <header>
           
-          <div>
+          <div className="bg-Neutral800 rounded-xl p-2 flex justify-between">
             <img src="./assets/images/logo.svg" alt="./assets/images/logo.svg" />
-            <button><img src="./assets/images/icon-sun.svg" alt="./assets/images/icon-sun.svg" /></button>
+            <button className="bg-Neutral700 hover:bg-Neutral600 p-4 rounded-2xl cursor-pointer"><img src="./assets/images/icon-sun.svg" alt="./assets/images/icon-sun.svg" /></button>
           </div>
 
-          <h1>Extentions</h1>
+          <h1 className="text-Neutral0 text-4xl font-bold text-center mt-8">Extentions List</h1>
 
-          <div className="filterArea">
-              <label htmlFor="all">All</label>
-              <input type="radio" name="selection" id="all" value="all" onChange={ (e)=>handleRadio(e) } defaultChecked/>
+          <div className="filterArea flex justify-around">
               
-              <label htmlFor="active">Active</label>
-              <input type="radio" name="selection" id="active" value="active" onChange={ (e)=>handleRadio(e) } />
+              <input className="filterRadio hidden" type="radio" name="selection" id="all" value="all" onChange={ (e)=>handleRadio(e) } defaultChecked/>  
+              <label className="
+                      cursor-pointer
+                      filterButton
+                      bg-Neutral700 
+                      hover:bg-Neutral600
+                      text-Neutral300 text-xl 
+                      py-2 px-6 my-6
+                      inline-block 
+                      rounded-full" htmlFor="all">
+                  All
+              </label>
+              
+              <input className="filterRadio hidden" type="radio" name="selection" id="active" value="active" onChange={ (e)=>handleRadio(e) } />  
+              <label className="
+                      cursor-pointer
+                      filterButton
+                      bg-Neutral700 
+                      hover:bg-Neutral600
+                      text-Neutral300 text-xl 
+                      py-2 px-6 my-6
+                      inline-block 
+                      rounded-full" htmlFor="active">
+                  Active
+              </label>
+              
+              <input className="filterRadio hidden" type="radio" name="selection" id="inactive" value="inactive" onChange={ (e)=>handleRadio(e) } />  
+              <label className="
+                      cursor-pointer
+                      filterButton
+                      bg-Neutral700 
+                      hover:bg-Neutral600
+                      text-Neutral300 text-xl 
+                      py-2 px-6 my-6
+                      inline-block 
+                      rounded-full" htmlFor="inactive">
+                  Inactive
+              </label>
+              
 
-              <label htmlFor="inactive">Inactive</label>
-              <input type="radio" name="selection" id="inactive" value="inactive" onChange={ (e)=>handleRadio(e) } />
           </div>
 
         </header>
 
-            <ul className="ExtentionsShowcase">
+            <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
 
             { filteredExtentions.length === 0 
               ?
-              <p>There's no items in the list</p>
+              <p className="mx-auto mt-10 text-2xl align-bottom">There's no items in this list</p>
               :
 
               filteredExtentions.map( (extention,index) => {
@@ -102,7 +140,8 @@ function App() {
                     setExtentions={setExtentions} 
                     extentions={extentions} 
                     index={index} 
-                    key={index}/> 
+                    key={index}
+                  /> 
                 )
 
               })

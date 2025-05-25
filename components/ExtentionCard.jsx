@@ -32,19 +32,31 @@ const ExtentionCard = ( {extention, setExtentions, extentions} )=>{
     }
 
     return(
-        <li className="ExtentionCard">
+        <li className="
+            bg-Neutral800 ExtentionCard 
+            p-4 border border-Neutral600 rounded-2xl
+            flex flex-wrap gap-4
+        ">
             
-            <div>
-                <picture> <img src={logo} alt={logo}/> </picture>
-                <div> 
-                    <h4>{name}</h4> 
-                    <p>{description}</p>
-                </div>
+            <picture className="w-[20%]"> <img src={logo} alt={logo}/> </picture>
+            <div className="w-[70%]"> 
+                <h2 className="text-xl font-bold mb-1">{name}</h2> 
+                <p className="text-Neutral300">{description}</p>
             </div>
             
-            <div className="ExtentionCardActions">
+            <div className="
+                    my-auto
+                    ExtentionCardActions
+                    w-full
+                    flex justify-between items-center
+                ">
 
-                <button onClick={ ()=> handleRemove(name) }>Remove</button>
+                <button className=" 
+                    border border-Neutral600 rounded-full
+                    py-2 px-4
+                    hover:bg-Red500
+                    cursor-pointer
+                " onClick={ ()=> handleRemove(name) }>Remove</button>
 
                 <input type="checkbox" 
                         checked={isActive} 

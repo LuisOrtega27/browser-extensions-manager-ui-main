@@ -1,14 +1,71 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@font-face {
+  font-family: notoItalic;
+  src: url('../assets/fonts/NotoSans-Italic-VariableFont_wdth\,wght.ttf');
+}  
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+@font-face {
+  font-family: notoVariable;
+  src: url('../assets/fonts/NotoSans-VariableFont_wdth\,wght.ttf');
+}  
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import "tailwindcss";
+
+  /* FrontendMentor styles guide */
+
+@theme {
+
+  --font-notoItalic: notoItalic;
+  --font-notoVariable: notoVariable;
+  
+  
+  --color-regal-blue: #243c5a; 
+  /* ## Layout */
+  /* 
+    - **Mobile**: 375px
+    - **Desktop**: 1440px
+   */
+  
+   /* ## Colors */
+  
+  --color-Neutral900: hsl(227, 75%, 14%);
+  --color-Neutral800: hsl(226, 25%, 17%);
+  --color-Neutral700: hsl(225, 23%, 24%);
+  --color-Neutral600: hsl(226, 11%, 37%);
+  --color-Neutral300: hsl(0, 0%, 78%);
+  --color-Neutral200: hsl(217, 61%, 90%);
+  --color-Neutral100: hsl(0, 0%, 93%);
+  --color-Neutral0: hsl(200, 60%, 99%);
+
+  /* ### Red */
+
+  --color-Red400: hsl(3, 86%, 64%);
+  --color-Red500: hsl(3, 71%, 56%);
+  --color-Red700: hsl(3, 77%, 44%);
+
+  /* ### Gradient */
+
+  --color-LightGradient: linear-gradient(180deg, #EBF2FC 0%, #EEF8F9 100%);
+  
+  --color-lightTop: #EBF2FC;
+  --color-lightbottom: #EEF8F9;
+
+
+  /* --color-DarkGradient: linear-gradient(180deg, #040918 0%, #091540 100%); */
+  
+  --color-darkTop: #040918;
+  --color-darkbottom: #091540;
+
+
+
+  /* ## Typography */
+
+  /* ### Body Copy */
+
+  --FontsizeParagraph: 16px;
+
+  /* ### Font */
+
+  --mentorFamilyNotoSans: url(https://fonts.google.com/noto/specimen/Noto+Sans);
+  --mentorWeights: 400, 500, 700;
+
 }
