@@ -1,5 +1,4 @@
-import { useState } from "react";
-import '../components/ExtentionCard.css'
+import '../components/ExtentionList.css'
 
 const ExtentionCard = ( {extention, setExtentions, extentions, theme} )=>{
 
@@ -44,7 +43,9 @@ const ExtentionCard = ( {extention, setExtentions, extentions, theme} )=>{
             <picture className="w-[20%]"> <img src={logo} alt={logo}/> </picture>
             <div className="w-[70%]"> 
                 <h2 className="text-xl font-bold mb-1">{name}</h2> 
-                <p className="text-Neutral300">{description}</p>
+                <p className={`
+                    ${theme === 'dark' ? 'text-Neutral300' : 'text-Neutral800'}
+                `}>{description}</p>
             </div>
             
             <div className="

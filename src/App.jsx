@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import '../components/ExtentionCard.css'
+
 import ExtentionCard from "../components/ExtentionCard";
 
 const URL = `./data.json`
