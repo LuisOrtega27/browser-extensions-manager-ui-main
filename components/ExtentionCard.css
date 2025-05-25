@@ -1,12 +1,24 @@
 
-
-.filterRadio:checked + .filterButton{
+/*  FILTER */
+.filterRadio:checked + label>.filterButton{
     background-color: hsl(3, 71%, 56%);
     color: var(--color-Neutral900);
 }
-.filterRadio:checked + .filterButton:hover{
+.filterRadio:checked + label>.filterButton:hover{
     background-color: hsl(3, 86%, 64%);
 }
+
+/* CARD SWITCH */
+
+.ExtentionCard label>button{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    pointer-events: none;
+    border-radius: 50px;
+}
+
 
 .ExtentionCard label{
     display: inline-block;
@@ -20,7 +32,6 @@
 }
 .ExtentionCard label:hover{
     background-color: var(--color-Neutral700);
-
 }
 input[type="checkbox"]{
     display: none;
@@ -49,3 +60,19 @@ input[type="checkbox"]:checked + label:hover{
 input[type="checkbox"]:checked + label::before{
     transform: translateX(100%);
 }
+
+
+/* CUSTOM OUTLINE*/
+
+.outline-custom:focus{
+    outline: solid 2px var(--color-Red500);
+    outline-offset: 2px;
+} 
+
+/*
+outline-2
+outline-solid
+outline-offset-2
+outline-Red500
+
+*/

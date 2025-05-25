@@ -44,7 +44,7 @@
 
   /* ### Gradient */
 
-  --color-LightGradient: linear-gradient(180deg, #EBF2FC 0%, #EEF8F9 100%);
+  /* --color-LightGradient: linear-gradient(180deg, #EBF2FC 0%, #EEF8F9 100%); */
   
   --color-lightTop: #EBF2FC;
   --color-lightbottom: #EEF8F9;
@@ -55,7 +55,8 @@
   --color-darkTop: #040918;
   --color-darkbottom: #091540;
 
-
+  /* ## Shadow */
+  --shadow-neutral: 0px 0px 30px 1px var(--color-Neutral200);
 
   /* ## Typography */
 
@@ -68,4 +69,8 @@
   --mentorFamilyNotoSans: url(https://fonts.google.com/noto/specimen/Noto+Sans);
   --mentorWeights: 400, 500, 700;
 
+  /* ### Outline */
+  
+
+    
 }
