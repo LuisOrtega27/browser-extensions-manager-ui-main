@@ -87,9 +87,9 @@ function App() {
             `} onClick={handleTheme}>
               {theme === 'dark' 
                 ? 
-                <img src="assets/images/icon-sun.svg" alt="assets/images/icon-sun.svg" />
+                <img src="public/icon-sun.svg" alt="public/icon-sun.svg" />
                 :
-                <img src="assets/images/icon-moon.svg" alt="assets/images/icon-moon.svg" />  
+                <img src="public/icon-moon.svg" alt="public/icon-moon.svg" />  
               }
               
             </button>
