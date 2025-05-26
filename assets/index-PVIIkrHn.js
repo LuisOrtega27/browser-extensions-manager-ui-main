@@ -80,12 +80,12 @@ Error generating stack: `+u.message+`
             sm:mb-10
             rounded-xl p-2 
             flex justify-between
-          `,children:[K.jsx("img",{src:"./assets/images/logo.svg",alt:"./assets/images/logo.svg"}),K.jsx("button",{className:`
+          `,children:[K.jsx("img",{src:"assets/images/logo.svg",alt:"./assets/images/logo.svg"}),K.jsx("button",{className:`
               ${w==="dark"?"bg-Neutral700 hover:bg-Neutral600":"bg-Neutral200 hover:bg-Neutral100"}
               p-4 rounded-2xl 
               cursor-pointer
               outline-custom
-            `,onClick:E,children:w==="dark"?K.jsx("img",{src:"./assets/images/icon-sun.svg",alt:"./assets/images/icon-sun.svg"}):K.jsx("img",{src:"./assets/images/icon-moon.svg",alt:"./assets/images//icon-moon.svg"})})]}),K.jsx("h1",{className:"w-full sm:w-1/2 text-4xl font-bold text-center sm:text-left mt-8",children:"Extentions List"}),K.jsxs("div",{className:"w-full sm:w-1/2 filterArea flex justify-around sm:justify-end sm:gap-4",children:[K.jsx("input",{className:"filterRadio hidden",type:"radio",name:"selection",id:"all",value:"all",onChange:z=>N(z),defaultChecked:!0}),K.jsx("label",{htmlFor:"all",className:"cursor-pointer ",children:K.jsx("button",{className:`
+            `,onClick:E,children:w==="dark"?K.jsx("img",{src:"assets/images/icon-sun.svg",alt:"assets/images/icon-sun.svg"}):K.jsx("img",{src:"assets/images/icon-moon.svg",alt:"assets/images/icon-moon.svg"})})]}),K.jsx("h1",{className:"w-full sm:w-1/2 text-4xl font-bold text-center sm:text-left mt-8",children:"Extentions List"}),K.jsxs("div",{className:"w-full sm:w-1/2 filterArea flex justify-around sm:justify-end sm:gap-4",children:[K.jsx("input",{className:"filterRadio hidden",type:"radio",name:"selection",id:"all",value:"all",onChange:z=>N(z),defaultChecked:!0}),K.jsx("label",{htmlFor:"all",className:"cursor-pointer ",children:K.jsx("button",{className:`
                 ${w==="dark"?"bg-Neutral700  text-Neutral300 text-xl ":"bg-Neutral0 text-Neutral900"}
               hover:bg-Neutral600
                 filterButton
