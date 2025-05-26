@@ -67,7 +67,7 @@ Error generating stack: `+u.message+`
                     cursor-pointer\r
                     outline-custom\r
 \r
-                `,onClick:()=>E(X),children:"Remove"}),K.jsx("input",{type:"checkbox",checked:ml,id:X,name:X,onChange:()=>N(M)}),K.jsx("label",{htmlFor:X,children:K.jsx("button",{className:"outline-custom"})})]})]})},Xo="./data.json",Qo=async(M,P)=>{try{const j=await fetch(M);if(!j.ok)throw new Error(`Response status: ${j.status}`);const m=await j.json();P(m)}catch(j){console.error(j.message)}};function Zo(){const[M,P]=pu.useState([]),[j,m]=pu.useState("all"),[G,X]=pu.useState(M),[w,ml]=pu.useState("dark");pu.useEffect(()=>{Qo(Xo,P)},[]),pu.useEffect(()=>{switch(j){case"all":X(M);break;case"active":X(M.filter(z=>z.isActive===!0));break;case"inactive":X(M.filter(z=>z.isActive===!1));break;default:console.log("there's been an error")}},[j,M]);const N=z=>{m(z.target.value)},E=()=>{ml(w==="dark"?"light":"dark")};return K.jsx(K.Fragment,{children:K.jsxs("main",{className:`
+                `,onClick:()=>E(X),children:"Remove"}),K.jsx("input",{type:"checkbox",checked:ml,id:X,name:X,onChange:()=>N(M)}),K.jsx("label",{htmlFor:X,children:K.jsx("button",{className:"outline-custom"})})]})]})},Xo="./assets/data.json",Qo=async(M,P)=>{try{const j=await fetch(M);if(!j.ok)throw new Error(`Response status: ${j.status}`);const m=await j.json();P(m)}catch(j){console.error(j.message)}};function Zo(){const[M,P]=pu.useState([]),[j,m]=pu.useState("all"),[G,X]=pu.useState(M),[w,ml]=pu.useState("dark");pu.useEffect(()=>{Qo(Xo,P)},[]),pu.useEffect(()=>{switch(j){case"all":X(M);break;case"active":X(M.filter(z=>z.isActive===!0));break;case"inactive":X(M.filter(z=>z.isActive===!1));break;default:console.log("there's been an error")}},[j,M]);const N=z=>{m(z.target.value)},E=()=>{ml(w==="dark"?"light":"dark")};return K.jsx(K.Fragment,{children:K.jsxs("main",{className:`
         bg-linear-to-b
         ${w==="dark"?" from-darkTop to-darkbottom text-Neutral0 ":"from-lightTop to-lightbottom text-Neutral900"}
         transition-colors
@@ -80,7 +80,7 @@ Error generating stack: `+u.message+`
             sm:mb-10
             rounded-xl p-2 
             flex justify-between
-          `,children:[K.jsx("img",{src:"./assets/images/logo.svg",alt:"./assets/images/logo.svg"}),K.jsx("button",{className:`
+          `,children:[K.jsx("img",{src:"./assets/imgs/logo.svg",alt:"./assets/images/logo.svg"}),K.jsx("button",{className:`
               ${w==="dark"?"bg-Neutral700 hover:bg-Neutral600":"bg-Neutral200 hover:bg-Neutral100"}
               p-4 rounded-2xl 
               cursor-pointer
