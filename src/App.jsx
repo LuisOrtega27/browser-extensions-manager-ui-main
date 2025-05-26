@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react"
 
 import ExtentionCard from "./components/ExtentionCard";
+import Footer from './components/Footer'
 
 
-const URL = `assets/api/data.json` 
+const URL = `api/data.json` 
 
 const FetchData = async(URL, setExtentions) =>{
   
@@ -188,7 +189,10 @@ function App() {
 
             </ul>
 
-      </main>      
+      </main>  
+      
+      <Footer/>    
+
     </>
   )
 }
