@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 
 import ExtentionCard from "../components/ExtentionCard";
 
-const URL = `browser-extensions-manager-ui-main/assets/data.json` 
+const URL = `/assets/api/data.json` 
 
 const FetchData = async(URL, setExtentions) =>{
   
