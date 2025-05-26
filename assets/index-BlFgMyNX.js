@@ -53,7 +53,7 @@ Error generating stack: `+u.message+`
             rounded-2xl
             p-4 
             lg:min-h-50
-        `,children:[Z.jsxs("picture",{className:"w-[20%]",children:[" ",Z.jsx("img",{src:`images/${j}`,alt:`images/${j}`})," "]}),Z.jsxs("div",{className:"w-[70%]",children:[Z.jsx("h2",{className:"text-xl font-bold mb-1",children:X}),Z.jsx("p",{className:`
+        `,children:[Z.jsxs("picture",{className:"w-[20%]",children:[" ",Z.jsx("img",{src:`${j}`,alt:`${j}`})," "]}),Z.jsxs("div",{className:"w-[70%]",children:[Z.jsx("h2",{className:"text-xl font-bold mb-1",children:X}),Z.jsx("p",{className:`
                     ${m==="dark"?"text-Neutral300":"text-Neutral800"}
                 `,children:w})]}),Z.jsxs("div",{className:`\r
                 my-auto\r
