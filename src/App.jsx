@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 
 import ExtentionCard from "../components/ExtentionCard";
 
-const URL = `./data.json`
+const URL = `./assets/data.json` 
 
 const FetchData = async(URL, setExtentions) =>{
   
@@ -85,7 +85,7 @@ function App() {
             flex justify-between
           `}>
 
-            <img src="./assets/images/logo.svg" alt="./assets/images/logo.svg"/>
+            <img src={`./assets/imgs/logo.svg`} alt="./assets/images/logo.svg"/>
 
             <button className={`
               ${theme === 'dark' ? 'bg-Neutral700 hover:bg-Neutral600' : 'bg-Neutral200 hover:bg-Neutral100'}
