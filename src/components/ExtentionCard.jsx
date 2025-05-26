@@ -1,4 +1,4 @@
-import '../components/ExtentionList.css'
+import './ExtentionList.css'
 
 const ExtentionCard = ( {extention, setExtentions, extentions, theme} )=>{
 
