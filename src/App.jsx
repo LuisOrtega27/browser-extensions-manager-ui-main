@@ -2,29 +2,24 @@ import { useEffect, useState } from "react"
 
 import ExtentionCard from "../components/ExtentionCard";
 
+import myApi from './api/data.json'
+
 const URL = `./src/api/data.json` 
 
 const FetchData = async(URL, setExtentions) =>{
   
-  try {
-   
-    const response = await fetch(URL);
+  // try {
+  //   const response = await fetch(URL);
+  //   if (!response.ok) {
+  //     throw new Error(`Response status: ${response.status}`);
+  //   }
+  //   const json = await response.json();
+  //   setExtentions(json)
+  // } catch (error) {
+  //   console.error(error.message);
+  // }
 
-    if (!response.ok) {
-
-      throw new Error(`Response status: ${response.status}`);
-
-    }
-
-    const json = await response.json();
-
-    setExtentions(json)
-
-  } catch (error) {
-
-    console.error(error.message);
-
-  }
+  setExtentions(myApi)
 
 }
 
