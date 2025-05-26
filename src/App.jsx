@@ -77,7 +77,7 @@ function App() {
             flex justify-between
           `}>
 
-            <img src="assets/images/logo.svg" alt="./assets/images/logo.svg"/>
+            <img src="images/logo.svg" alt="images/logo.svg"/>
 
             <button className={`
               ${theme === 'dark' ? 'bg-Neutral700 hover:bg-Neutral600' : 'bg-Neutral200 hover:bg-Neutral100'}
@@ -87,9 +87,9 @@ function App() {
             `} onClick={handleTheme}>
               {theme === 'dark' 
                 ? 
-                <img src="public/icon-sun.svg" alt="public/icon-sun.svg" />
+                <img src="images/icon-sun.svg" alt="images/icon-sun.svg" />
                 :
-                <img src="public/icon-moon.svg" alt="public/icon-moon.svg" />  
+                <img src="images/icon-moon.svg" alt="images/icon-moon.svg" />  
               }
               
             </button>
