@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 
 import ExtentionCard from "../components/ExtentionCard";
 
-const URL = `/assets/api/data.json` 
+const URL = `./src/api/data.json` 
 
 const FetchData = async(URL, setExtentions) =>{
   
@@ -85,7 +85,7 @@ function App() {
             flex justify-between
           `}>
 
-            <img src={`browser-extensions-manager-ui-main/assets/images/logo.svg`} alt="browser-extensions-manager-ui-main/assets/images/logo.svg"/>
+            <img src="./assets/images/logo.svg" alt="./assets/images/logo.svg"/>
 
             <button className={`
               ${theme === 'dark' ? 'bg-Neutral700 hover:bg-Neutral600' : 'bg-Neutral200 hover:bg-Neutral100'}
@@ -95,9 +95,9 @@ function App() {
             `} onClick={handleTheme}>
               {theme === 'dark' 
                 ? 
-                <img src="browser-extensions-manager-ui-main/assets/images/icon-sun.svg" alt="browser-extensions-manager-ui-main/assets/images/icon-sun.svg" />
+                <img src="./assets/images/icon-sun.svg" alt="./assets/images/icon-sun.svg" />
                 :
-                <img src="browser-extensions-manager-ui-main/assets/images/icon-moon.svg" alt="browser-extensions-manager-ui-main/assets/images//icon-moon.svg" />  
+                <img src="./assets/images/icon-moon.svg" alt="./assets/images//icon-moon.svg" />  
               }
               
             </button>

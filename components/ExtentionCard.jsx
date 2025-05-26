@@ -40,7 +40,7 @@ const ExtentionCard = ( {extention, setExtentions, extentions, theme} )=>{
             lg:min-h-50
         `}>
             
-            <picture className="w-[20%]"> <img src={`browser-extensions-manager-ui-main/${logo}`} alt={`browser-extensions-manager-ui-main/${logo}`}/> </picture>
+            <picture className="w-[20%]"> <img src={`./${logo}`} alt={`./${logo}`}/> </picture>
             <div className="w-[70%]"> 
                 <h2 className="text-xl font-bold mb-1">{name}</h2> 
                 <p className={`
