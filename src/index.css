@@ -1,11 +1,11 @@
 @font-face {
   font-family: notoItalic;
-  src: url('../assets/fonts/NotoSans-Italic-VariableFont_wdth\,wght.ttf');
+  src: url('browser-extensions-manager-ui-main/assets/fonts/NotoSans-Italic-VariableFont_wdth\,wght.ttf');
 }  
 
 @font-face {
   font-family: notoVariable;
-  src: url('../assets/fonts/NotoSans-VariableFont_wdth\,wght.ttf');
+  src: url('browser-extensions-manager-ui-main/assets/fonts/NotoSans-VariableFont_wdth\,wght.ttf');
 }  
 
 @import "tailwindcss";
